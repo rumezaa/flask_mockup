@@ -1,0 +1,61 @@
+
+
+
+
+
+.rounded-buttons{
+    border-radius: 70px;
+    font-size: 26px;
+    color: #DF5237;
+    position: center;
+    padding: 20px;
+
+}
+#signIn{
+    display: flex;
+    align-content: center;
+    border-radius: 25px;
+    background: #FFBE4A;
+    padding: 20px;
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.eventHandlers{
+    display: flex;
+    align-content: center;
+    border-radius: 25px;
+    background: #FFBE4A;
+    padding: 20px;
+    width: 85%;
+    height: 680px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#login{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+#view{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#calendar{
+    position: absolute;
+    left: 15%;
+}
