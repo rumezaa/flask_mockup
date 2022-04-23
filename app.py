@@ -1,6 +1,6 @@
 from flask import Flask, url_for
 from flask import render_template, redirect, request
-import eventbrite
+
 
 app = Flask(__name__)
 
