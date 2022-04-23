@@ -1,4 +1,0 @@
--- authorize via eventbrite
-
---connnect to eventbrite library somehow?
-   --- how gonna get
