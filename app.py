@@ -12,19 +12,24 @@ key = "SIPL2IVAEKK6BOEFS3"
 cl_sec = "S7WZZRPSIBMWSMSGERQ65OSBLUKBOXA5ZM7UYSEQTA2PZ7NJLM"
 end_point = "http://127.0.0.1:5000/home"
 
+
+#app.route represents different endpoints/paths of the website. the / is the root 
+
 @app.route('/')
 def main():  # put application's code here
     return render_template('login.html', **locals())
 
-
+#this handles authentication. /auth is connected to the login form in login.html
 @app.route('/auth')
 def auth():
     #authorization
     return redirect(f"https://www.eventbrite.com/oauth/authorize?response_type=token&client_id={key}&redirect_uri={end_point}")
 
+#thise is our home page, and it listens for post events
 @app.route('/home', methods=['POST'])
 def view_cal():
     #------------------------------ this code does not work at the moment but can be used for future reference -----------------------------------------------#
+    #getting the query param from url after auth
     code = request.args.get("access_token")
     code = "HMDILKOOYVHWM4HOFU7J"
 
@@ -33,6 +38,7 @@ def view_cal():
     header = {
         'content-type': 'application/x-www-form-urlencoded'
     }
+    #getting out client id
     cl_id = requests.post('https://www.eventbrite.com/oauth/token',json=data, headers=header)
 
 
@@ -52,13 +58,12 @@ def view_cal():
 
 
 
-
+#path for the page where we can view calendar
 @app.route('/view')
 def cal():
     return render_template('view.html')
 
-
-
+#runs the program
 if __name__ == '__main__':
     app.debug=False
     app.run()
