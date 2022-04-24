@@ -4,7 +4,7 @@ from pprint import pprint
 class HandleCalendar:
     def __init__(self, calendar_id="jvt5hhmrfbnkjivfmsfjomse04@group.calendar.google.com"):
         client_id = "925812010640-1dfpm334hia22bcsgki6hi4dlab5lgij.apps.googleusercontent.com"
-        client_secret = "C:/Users/rumeza/PycharmProject/mockup/client_secret.json"
+        client_secret = "/home/rumeza/mockup/client_secret.json"
         scopes = ['https://www.googleapis.com/auth/calendar']
         self.calendar_id = calendar_id
         self.service = create_service(client_secret,"calendar","v3",scopes)

@@ -22,7 +22,7 @@ def auth():
     #authorization
     return redirect(f"https://www.eventbrite.com/oauth/authorize?response_type=token&client_id={key}&redirect_uri={end_point}")
 
-@app.route('/home', methods=['GET','POST'])
+@app.route('/home', methods=['POST'])
 def view_cal():
     #------------------------------ this code does not work at the moment but can be used for future reference -----------------------------------------------#
     code = request.args.get("access_token")
