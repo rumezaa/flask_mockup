@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 key = "SIPL2IVAEKK6BOEFS3"
 cl_sec = "S7WZZRPSIBMWSMSGERQ65OSBLUKBOXA5ZM7UYSEQTA2PZ7NJLM"
-end_point = "http://127.0.0.1:5000/home"
+end_point = "https://calvent.herokuapp.com/home"
 
 #static directory keeps our CSS files, img files and js
 #app.route represents different endpoints/paths of the website. the / is the root 
