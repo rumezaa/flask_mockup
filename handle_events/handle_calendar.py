@@ -1,6 +1,8 @@
 from backend.google_apis import create_service,convert_to_RFC_datetime
 from pprint import pprint
 #handles calendar events -- can integarte auth tech later
+
+#custom class for handling calendar. Requires the clanedars ID to update. By default its a test one I made
 class HandleCalendar:
     def __init__(self, calendar_id="jvt5hhmrfbnkjivfmsfjomse04@group.calendar.google.com"):
         client_id = "925812010640-1dfpm334hia22bcsgki6hi4dlab5lgij.apps.googleusercontent.com"
@@ -8,6 +10,8 @@ class HandleCalendar:
         scopes = ['https://www.googleapis.com/auth/calendar']
         self.calendar_id = calendar_id
         self.service = create_service(client_secret,"calendar","v3",scopes)
+    
+    
     def add_events(self):
         default_temp ={
     'summary': 'Google I/O 2015',
