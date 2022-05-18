@@ -8,44 +8,41 @@ import json
 
 app = Flask(__name__)
 
+#---------------ouath2 deatils (eventbrite)------------------------------------------#
 key = "SIPL2IVAEKK6BOEFS3"
 cl_sec = "S7WZZRPSIBMWSMSGERQ65OSBLUKBOXA5ZM7UYSEQTA2PZ7NJLM"
 end_point = "http://127.0.0.1:5000/home"
 
+
+
+
+
+
+#diff locations on out website
+
+
+#main route
 @app.route('/')
 def main():  # put application's code here
     return render_template('login.html', **locals())
-
 
 @app.route('/auth')
 def auth():
     #authorization
     return redirect(f"https://www.eventbrite.com/oauth/authorize?response_type=token&client_id={key}&redirect_uri={end_point}")
 
+
 @app.route('/home', methods=['GET','POST'])
 def view_cal():
     #------------------------------ this code does not work at the moment but can be used for future reference -----------------------------------------------#
-    code = request.args.get("access_token")
-    code = "HMDILKOOYVHWM4HOFU7J"
 
-    data = {"grant_type": "authorization_code",'client_id':key,"client_secret": cl_sec,"code": code,"redirect_uri":end_point}
-
-    header = {
-        'content-type': 'application/x-www-form-urlencoded'
-    }
-    cl_id = requests.post('https://www.eventbrite.com/oauth/token',json=data, headers=header)
-
-
-    try:
-        Events.get_events(cl_id)
-    except:
-        pass
 
     #-------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
     #post events via button
     if request.method == 'POST':
         HC().add_events()
+        print("Events synced")
 
     return render_template('home.html')
 
