@@ -37,6 +37,7 @@ class Events:
             'location': url
         }
 
+        return arr
 
 
 
