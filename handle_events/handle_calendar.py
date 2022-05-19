@@ -6,13 +6,21 @@ from backend.google_apis import create_service,convert_to_RFC_datetime
 class HandleCalendar:
     def __init__(self, calendar_id="jvt5hhmrfbnkjivfmsfjomse04@group.calendar.google.com"):
 
+        #creating api service
         client_id = "488996747074-hbluscucl9ulbihc6g8ek8hs4gqgjk6b.apps.googleusercontent.com"
         client_secret = "client_secret.json"
         scopes = ['https://www.googleapis.com/auth/calendar']
         self.calendar_id = calendar_id
         self.service = create_service(client_secret,"calendar","v3",scopes)
 
+
+    # adds events to calendar, edit teh default temp w event data
     def add_events(self):
+
+
+
+
+
         default_temp ={
     'summary': 'New event',
     'location': '800 Howard St., San Francisco, CA 94103',

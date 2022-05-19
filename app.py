@@ -2,7 +2,7 @@ import eventbrite
 import requests
 from flask import Flask, url_for
 from flask import render_template, redirect, request
-from handle_events.handle_calendar import HandleCalendar as HC
+from handle_events.handle_calendar import HandleCalendar as GCal
 from handle_events.handle_events import Events
 import json
 
@@ -32,22 +32,24 @@ def auth():
     return redirect(f"https://www.eventbrite.com/oauth/authorize?response_type=token&client_id={key}&redirect_uri={end_point}")
 
 
-@app.route('/home', methods=['GET','POST'])
-def view_cal():
-    #------------------------------ this code does not work at the moment but can be used for future reference -----------------------------------------------#
+@app.route('/home', methods=['POST','GET'])
+def oauth2():
+    return '''  <script type="text/javascript">
+                var token = window.location.href.split("access_token=")[1]; 
+                window.location = "/main/" + token;
+            </script> '''
 
-
-    #-------------------------------------------------------------------------------------------------------------------------------------------------------------#
-
-    #post events via button
+@app.route('/main/<token>', methods=['GET','POST'])
+def view_cal(token):
     if request.method == 'POST':
-        HC().add_events()
-        print("Events synced")
+        #getting eventbrite events
+        Events(token).get_events()
+
+        #add events to GCal
+        GCal().add_events()
+
 
     return render_template('home.html')
-
-
-
 
 
 @app.route('/view')

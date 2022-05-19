@@ -1,3 +1,4 @@
+import json
 
 import requests
 class Events:
@@ -13,16 +14,32 @@ class Events:
 
         events = requests.get(url=f"https://www.eventbriteapi.com/v3/organizations/{id}/events/",
                               headers={"Authorization": f'Bearer {self.token}'}).json()
-        return events.json()
-#
-#
-#
-# # from eventbrite import Eventbrite
-eventbrite = Eventbrite("ENIBW4MQNTNKBZEOBGU3")
-#
-#
-# Get my own User ID
-print(eventbrite.get_user())
+
+
+
+        return self.filter(events['events'])
+
+    def filter(self,ev):
+        summary = [ev[names]['name']['text'] for names in range(len(ev))]
+        descs = [ev[desc]['description']['text'] for desc in range(len(ev))]
+        url = [ev['url'] for i in range(len(ev))]
+        start_time = [ev[start]['start']['local'] for start in range(len(ev))]
+        end_time = [ev[end]['end']['local'] for end in range(len(ev))]
+        timezone = [ev[end]['end']['timezone'] for end in range(len(ev))]
+
+
+        arr = {
+            'summary': summary,
+            'description': descs,
+            'start_time': start_time,
+            'end-time': end_time,
+            'time_zone': timezone,
+            'location': url
+        }
+
+
+
+
 
 
 
