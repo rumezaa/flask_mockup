@@ -14,12 +14,8 @@ class HandleCalendar:
         self.service = create_service(client_secret,"calendar","v3",scopes)
 
 
-    # adds events to calendar, edit teh default temp w event data
+    # adds events to calendar, edit the default temp w/ event data
     def add_events(self):
-
-
-
-
 
         default_temp ={
     'summary': 'New event',

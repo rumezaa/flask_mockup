@@ -1,6 +1,6 @@
 import json
-
 import requests
+
 class Events:
     def __init__(self,token):
         self.token = token
@@ -15,9 +15,9 @@ class Events:
         events = requests.get(url=f"https://www.eventbriteapi.com/v3/organizations/{id}/events/",
                               headers={"Authorization": f'Bearer {self.token}'}).json()
 
-
-
         return self.filter(events['events'])
+
+
 
     def filter(self,ev):
         summary = [ev[names]['name']['text'] for names in range(len(ev))]
@@ -27,7 +27,7 @@ class Events:
         end_time = [ev[end]['end']['local'] for end in range(len(ev))]
         timezone = [ev[end]['end']['timezone'] for end in range(len(ev))]
 
-
+        #formatted data
         arr = {
             'summary': summary,
             'description': descs,
