@@ -22,11 +22,12 @@ class Events:
     def filter(self,ev):
         summary = [ev[names]['name']['text'] for names in range(len(ev))]
         descs = [ev[desc]['description']['text'] for desc in range(len(ev))]
-        url = [ev['url'] for i in range(len(ev))]
+        url = [ev[i]['url'] for i in range(len(ev))]
         start_time = [ev[start]['start']['local'] for start in range(len(ev))]
         end_time = [ev[end]['end']['local'] for end in range(len(ev))]
         timezone = [ev[end]['end']['timezone'] for end in range(len(ev))]
 
+        print(start_time)
         #formatted data
         arr = {
             'summary': summary,

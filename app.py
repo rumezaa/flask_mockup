@@ -43,10 +43,10 @@ def oauth2():
 def view_cal(token):
     if request.method == 'POST':
         #getting eventbrite events
-        Events(token).get_events()
+
 
         #add events to GCal
-        GCal().add_events()
+        GCal().add_events(Events("ENIBW4MQNTNKBZEOBGU3").get_events())
 
 
     return render_template('home.html')

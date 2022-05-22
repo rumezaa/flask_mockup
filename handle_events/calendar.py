@@ -19,45 +19,44 @@ class HandleCalendar:
             summary = data['summary'][i]
             description = data['description'][i]
             start = data['start_time'][i]
-            timezone = data['timezone'][i]
+            timezone = data['time_zone'][i]
             location = data['location'][i]
-
+            end = data['end-time'][i]
 
 
             start = start.split("-")
-
-            end = data['end-time'][i]
             end = end.split("-")
 
 
-            year = start[0]
-            month = start[1]
-            temp = start[2]
-            temp = temp.split("T")
-            day = temp[0]
+            start_year = int(start[0])
+            print(start_year)
+            start_month = int(start[1])
+            temp = start[2].split("T")
+            start_day = int(temp[0])
             temp1 = temp[1].split(":")
-            hour = temp1[0]
-            minute = temp[1]
 
-            eyear = end[0]
-            emonth = end[1]
-            temp = end[2]
-            temp = temp.split("t")
-            eday = temp[0]
-            temp1 = temp[1].split(":")
-            ehour = temp1[0]
-            eminute = temp[1]
+            start_hour = int(temp1[0])
+            start_minute = int(temp1[1])
+            print(start_minute)
+
+            end_year = int(end[0])
+            end_month = int(end[1])
+            tem = end[2].split("T")
+            end_day = int(tem[0])
+            te = tem[1].split(":")
+            end_hour = int(te[0])
+            end_minute = int(te[1])
 
             default_temp = {
                 'summary': f'{summary}',
                 'location': f'{location}',
                 'description': f'{description}',
                 'start': {
-                    'dateTime': convert_to_RFC_datetime(year, month, day, hour, minute),
+                    'dateTime': convert_to_RFC_datetime(start_year, start_month, start_day, start_hour, start_minute),
                     'timeZone': f'{timezone}',
                 },
                 'end': {
-                    'dateTime': convert_to_RFC_datetime(eyear, emonth, eday, ehour, eminute),
+                    'dateTime': convert_to_RFC_datetime(end_year, end_month, end_day, end_hour, end_minute),
                     'timeZone': f'{timezone}',
                 },
                 'recurrence': [
