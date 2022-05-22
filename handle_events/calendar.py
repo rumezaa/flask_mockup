@@ -16,6 +16,7 @@ class HandleCalendar:
     def add_events(self, data):
         for i in range(len(data['summary'])):
 
+            #get data
             summary = data['summary'][i]
             description = data['description'][i]
             start = data['start_time'][i]
@@ -23,29 +24,31 @@ class HandleCalendar:
             location = data['location'][i]
             end = data['end-time'][i]
 
-
+            #filter the times
             start = start.split("-")
             end = end.split("-")
 
-
-            start_year = int(start[0])
-            print(start_year)
-            start_month = int(start[1])
             temp = start[2].split("T")
-            start_day = int(temp[0])
             temp1 = temp[1].split(":")
 
+           #the start date
+            start_year = int(start[0])
+            start_month = int(start[1])
+            start_day = int(temp[0])
             start_hour = int(temp1[0])
             start_minute = int(temp1[1])
-            print(start_minute)
 
+            tem = end[2].split("T")
+            te = tem[1].split(":")
+
+            #the end date
             end_year = int(end[0])
             end_month = int(end[1])
-            tem = end[2].split("T")
             end_day = int(tem[0])
-            te = tem[1].split(":")
             end_hour = int(te[0])
             end_minute = int(te[1])
+
+
 
             default_temp = {
                 'summary': f'{summary}',
