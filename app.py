@@ -46,7 +46,7 @@ def view_cal(token):
 
 
         #add events to GCal
-        GCal().add_events(Events("ENIBW4MQNTNKBZEOBGU3").get_events())
+        GCal().add_events(Events(token).get_events())
 
 
     return render_template('home.html')
