@@ -1,0 +1,122 @@
+#ctitle{
+    margin-top: 1vh;
+}
+.optionst{
+    margin-top: 2vh;
+}
+.optionst2{
+    display: none;
+}
+.options{
+    transition-duration: 500ms;
+    position: fixed;
+    width: 50vw;
+    height: 80vh;
+    background-image: url('./Page.png');
+    background-size: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    top: 20vh
+}
+.options2{
+    position: fixed;
+    width: 50px;
+    height: 80vh;
+    background-image: url('./Page.png');
+    background-size: 300%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    transition-duration: 500ms;
+    top: 20vh
+}
+
+
+#pull-tab{
+    background-image: url('./Arrow.png');
+    background-position: center;
+    background-size: 50%;
+    float: right;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    height: 100%;
+    overflow: hidden;
+    width: 30px;
+}
+#tab{
+   width: 80%; 
+   height:80%;
+   margin-left: 5vw;
+   margin-top: 4vh;
+   background-color: transparent;
+}
+
+#labels{
+    width: 100px;
+}
+#page{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-image: url('https://www.teahub.io/photos/full/11-117363_night-sky-wallpapers-high-resolution-background-starry-night.jpg');
+}
+#outline{
+    position:fixed;
+    display: inline-block;
+    background-color: rgba(255, 190, 74, 1);
+    width: 80vw;
+    height: 100vh;
+    margin-top: 50px;
+    z-index: -1;
+    left: 10vw;
+    top: 10vh;
+    align-items: center;
+    border-radius: 50px;
+    background-size: 30vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+iframe{
+    width:90%; 
+    height:70%; 
+    margin-top: 7vh;
+    border-width: 5px;
+}
+
+
+#chooseevent{
+    margin-top: -10px;
+    display: block;
+    height: 120px;
+    overflow: auto;
+}
+#choosealarm{
+    top: 0;
+    display: block;
+    height: 120px;
+    overflow: auto;
+
+}
+#outlined-basic{
+    width: 10vw;
+    float: right;
+}
+#signout{
+    margin: 10px;
+    border: 1px solid black;
+}
+#changeuser{
+    margin: 10px;
+}
+#userform{
+}
+
+#passform{
+}
+.tabscontainer{
+    display: contents;
+}
+.tabscontainer2{
+    display: none
+}

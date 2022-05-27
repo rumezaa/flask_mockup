@@ -51,8 +51,7 @@ def view_cal(token):
 def cal():
     return render_template('view.html')
 
-
-
+#runs the program
 if __name__ == '__main__':
     app.debug=False
     app.run()
