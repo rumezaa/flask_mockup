@@ -2,7 +2,7 @@
     text-align: center;
 }
 .blur {
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     height: 100vh;
     width: 100vw;
     margin: auto;
@@ -15,14 +15,17 @@
     margin: auto;
     transition-duration: 1s;
 }
-#total{
+.total{
     display: flex;
     position: relative;
     width: 100vw;
     height: 100vh;
     align-items: center;
     justify-content: center;
-    background-image: url("https://www.thoughtco.com/thmb/Zya6PS3m6XjRAmVo1HONvY9DW_A=/3865x2174/smart/filters:no_upscale()/abstract-paper-flower-pattern-656688606-5acfba2eae9ab80038461ca0.jpg");
+    background-color: transparent;
+}
+.total2{
+    display: none;
 }
 
 .box{
