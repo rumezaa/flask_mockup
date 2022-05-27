@@ -20,3 +20,5 @@ docs/_build/
 .vscode
 __pycache__
 .idea
+token files/
+__pycache__/
