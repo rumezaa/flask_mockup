@@ -20,7 +20,7 @@ function SuccessBox(){
         <div className={total}>
             <div className={blur}></div>
             <div className={style}>
-                <h1 id='title'>SUCCESS!</h1>
+                <div id="successtitle"></div>
                 <h2>You have successfully signed into eventbrite!</h2>
                 <Button variant="contained" color='success' id='button' onClick={changeStyle}>
                 	Continue to the Calendar
