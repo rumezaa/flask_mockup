@@ -11,7 +11,18 @@ function CalendarPage(){
    const loc = useLocation();
    const current = loc.pathname
    
+   const pop = () => {
    
+   if(loc.pathname == '/view'){
+   return false;
+   }
+   
+   else{
+   return true;
+   }
+   
+   
+   }
    
    console.log(loc.pathname)
     return(
@@ -28,7 +39,7 @@ function CalendarPage(){
                 </iframe>
             </div> 
             
-		<SuccessBox trigger={true}/>
+		{(loc.pathname !== '/view' || loc.pathname !== '/main:') && <SuccessBox trigger={true}/> }
         </div>
             
         
