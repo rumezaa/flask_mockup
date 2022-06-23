@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './SuccessBox.css';
 import Button from '@mui/material/Button';
 import {Link} from "react-router-dom";
-function SuccessBox(){
+function SuccessBox(props){
     const [style, setStyle] = useState("box");
     const [blur, setBlur] = useState('blur')
     const [total, setTotal] = useState('total')
@@ -15,7 +15,7 @@ function SuccessBox(){
         window.location = "/main/" + token;
         
     }
-    return(
+    return(props.trigger) ? (
 
         <div className={total}>
             <div className={blur}></div>
@@ -29,7 +29,7 @@ function SuccessBox(){
             </div>
         </div>
 
-    )
+    ) : "";
 }
 
 export default SuccessBox
