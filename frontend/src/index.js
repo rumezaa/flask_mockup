@@ -14,7 +14,7 @@ root.render(
     <Routes>
     <Route  path='/' exact element = {<App />} />
     <Route path='/main/:token' exact element = {<CalendarPage />} />
-    <Route path='/home' exact element = {<SuccessBox />} />
+    <Route path='/home' exact element = {<CalendarPage />} />
     <Route path='/view' exact element = {<CalendarPage/>} />
     
     </Routes>
