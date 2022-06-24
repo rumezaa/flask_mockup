@@ -3,7 +3,13 @@
 }
 
 
+.cont{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    filter: blur(20px);
 
+}
 
 #page{
     width: 100vw;

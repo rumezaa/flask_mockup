@@ -9,22 +9,7 @@ import {useLocation } from 'react-router-dom';
 
 function CalendarPage(){
    const loc = useLocation();
-   const current = loc.pathname
-   
-   const pop = () => {
-   
-   if(loc.pathname == '/view'){
-   return false;
-   }
-   
-   else{
-   return true;
-   }
-   
-   
-   }
-   
-   console.log(loc.pathname)
+
     return(
     
     
@@ -39,7 +24,7 @@ function CalendarPage(){
                 </iframe>
             </div> 
             
-		{(loc.pathname !== '/view' || loc.pathname !== '/main:') && <SuccessBox trigger={true}/> }
+		{loc.pathname !== '/view' && <SuccessBox trigger={true}/> }
         </div>
             
         
